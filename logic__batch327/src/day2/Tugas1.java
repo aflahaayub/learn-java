@@ -57,6 +57,8 @@ public class Tugas1 {
 		System.out.println("Diskon 40%: " + (int) diskon);
 		System.out.println("Ongkir: " + ongkir);
 		System.out.println("Total Belanja: " + totalBelanja);	
+		
+		input.close();
 	}
 
 	static void Soal02() {
@@ -95,6 +97,8 @@ public class Tugas1 {
 		System.out.println("Diskon Ongkir: " + diskonOngkir);
 		System.out.println("Diskon Belanja " + diskonBelanja);
 		System.out.println("Total Belanja: " + total);
+		
+		input.close();
 	}
 	
 	static void Soal03() {
@@ -109,8 +113,10 @@ public class Tugas1 {
 		int point = 0;
 		
 		if(beliPulsa > 30000) {
-			beliPulsa -= 30000;
-			point = 20 +  (2 * (beliPulsa/1000));		
+			beliPulsa -= 10000; //0 poin
+			beliPulsa -= 20000; // 20 poin
+			point += 20;
+			point += (2 * (beliPulsa/1000));		
 		}else if(beliPulsa > 10000) {
 			point = beliPulsa/1000;
 		}
@@ -119,7 +125,7 @@ public class Tugas1 {
 		
 		System.out.println(point + " Point");
 		
-		
+		input.close();
 	}
 
 	static void Soal04() {
@@ -140,6 +146,7 @@ public class Tugas1 {
 		
 		System.out.println("Pulsa : " + beli );
 		System.out.println("Point : " + point);
+		input.close();
 	}
 
 	static void Soal05() {
@@ -157,6 +164,7 @@ public class Tugas1 {
 		}else {
 			System.out.println("Masukkan nilai jari-jari yang benar!");
 		}
+		input.close();
 		
 	}
 
@@ -175,6 +183,7 @@ public class Tugas1 {
 		}else {
 			System.out.println("Masukkan nilai sisi yang benar!");
 		}
+		input.close();
 	}
 
 	static void Soal07() {
@@ -191,5 +200,7 @@ public class Tugas1 {
 		}else {
 			System.out.printf("Angka %d %% %d bukan 0 melainkan %d", angka, pembagi, angka % pembagi);
 		}
+		
+		input.close();
 	}
 }
