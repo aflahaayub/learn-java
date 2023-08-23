@@ -79,16 +79,24 @@ public class Tugas1 {
 		int diskonBelanja = 0;
 		int diskonOngkir = 0;
 		
-		if(belanja >= 100000 && ongkir > 0) {
-			diskonOngkir = 10000;
-			diskonBelanja = 20000;
-		}else if(belanja >= 50000 && ongkir > 0) {
-			diskonOngkir = 10000;
-			diskonBelanja = 10000;
-		}else if(belanja >= 30000 && ongkir > 0) {
-			diskonOngkir = 5000;
-			diskonBelanja = 5000;
+		if(ongkir > 0) {
+			
+			if(belanja >= 100000) {
+				diskonOngkir = 10000;
+				diskonBelanja = 20000;
+				
+			}else if(belanja >= 50000) {
+				diskonOngkir = 10000;
+				diskonBelanja = 10000;
+				
+			}else if(belanja >= 30000) {
+				diskonOngkir = 5000;
+				diskonBelanja = 5000;
+			}
+		}else {
+			System.out.println("Isi harga ongkir dengan benar!")
 		}
+		
 		
 		int total = (ongkir - diskonOngkir) + (belanja - diskonBelanja);
 		
