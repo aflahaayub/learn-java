@@ -94,7 +94,7 @@ public class Tugas1 {
 				diskonBelanja = 5000;
 			}
 		}else {
-			System.out.println("Isi harga ongkir dengan benar!")
+			System.out.println("Isi harga ongkir dengan benar!");
 		}
 		
 		
@@ -167,8 +167,9 @@ public class Tugas1 {
 			double luas = Math.PI * r * r;
 			double keliling = 2 * Math.PI * r;
 			
-			System.out.println("Luas = "+ (int) Math.ceil(luas) + " cm2");
-			System.out.print("Keliling = "+ (int) Math.ceil(keliling) + " cm");			
+//			System.out.println("Luas = "+ luas + " cm2");
+			System.out.println("Luas = "+ Math.ceil(luas) + " cm2");
+			System.out.print("Keliling = "+ Math.ceil(keliling) + " cm");			
 		}else {
 			System.out.println("Masukkan nilai jari-jari yang benar!");
 		}
