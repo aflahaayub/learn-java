@@ -9,7 +9,7 @@ public class ChallengeArrDim1 {
 		// TODO Auto-generated method stub
 //		dinamisVer(); // work for soal 1-4
 //		soal01();
-		soal02();
+//		soal02();
 //		soal03();
 //		soal04();
 //		soal05();
@@ -17,9 +17,7 @@ public class ChallengeArrDim1 {
 //		soal07(); // also work for soal08
 //		soal08();
 //		soal09();
-//		soal10();
-		
-
+		soal10();
 	}
 	
 	static void dinamisVer() {
@@ -39,6 +37,8 @@ public class ChallengeArrDim1 {
 			for(int i = 0; i < len; i++) {
 				arr[i] = j;
 				j+=gap;
+				
+//				System.out.print(arr[i] + " ");
 			}
 			
 			System.out.println(Arrays.toString(arr));
@@ -282,7 +282,7 @@ public class ChallengeArrDim1 {
 	}
 
 	static void soal10() {
-		//output => 3	9	27	XXX	243	729	2187 -> *3 and skip
+		//output => 3	9	27	XXX	243	729	2187 -> kel 4 and skip
 		Scanner input = new Scanner(System.in);
 		System.out.print("Insert the array length: ");
 		int len = input.nextInt();
