@@ -8,9 +8,6 @@ public class ChallengeAr2Dim {
 	private static Scanner input = new Scanner(System.in);
 
 	public static void main(String[] args) {
-//		Scanner input = new Scanner(System.in);
-		
-//		String answer = input.nextLine();
 		String answer = "Y";
 		
 		while("Y".equalsIgnoreCase(answer)) {
@@ -222,8 +219,6 @@ public class ChallengeAr2Dim {
 						arr[i][j] = otherCounter;
 						otherCounter++;
 					}
-				}else {
-					break;
 				}
 				System.out.print(arr[i][j] + " ");
 			}
