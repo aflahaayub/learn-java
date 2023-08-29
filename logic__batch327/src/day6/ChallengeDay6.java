@@ -53,7 +53,7 @@ public class ChallengeDay6 {
 //		
 //		input.close();
 		
-		soal01();
+		soal06Ver2();
 	}
 	
 	static void soal01() {
@@ -62,6 +62,7 @@ public class ChallengeDay6 {
 		// celana -> 40,30,45,10 --> 10,30,40,45
 		
 		// output: 75 -> 35 + 40
+		
 		System.out.println("Uang Andi: ");
 		int uang = input.nextInt();
 		
@@ -298,6 +299,54 @@ public class ChallengeDay6 {
 		
 	}
 	
+	static void soal05Ver2() {
+		System.out.println("Input text: ");
+		String text = input.nextLine().toLowerCase();
+		String vowels = "";
+		String consonant = "";
+		
+		for(int i = 0; i < text.length(); i++) {
+			char c = text.charAt(i);
+						
+			switch(c) {
+				case 'a': 
+					vowels += 'a';
+					break;
+				case 'i': 
+					vowels += 'i';
+					break;
+				case 'u': 
+					vowels += 'u';
+					break;
+				case 'e': 
+					vowels += 'e';
+					break;
+				case 'o': 
+					vowels += 'o';
+					break;
+				default:
+					consonant += c;
+			}
+
+		}
+		
+		char[] vow = vowels.toCharArray();
+		Arrays.sort(vow);
+		
+		StringBuilder textVow = new StringBuilder();
+		textVow.append(vow);
+		
+		char[] conso = consonant.toCharArray();
+		Arrays.sort(conso);
+		
+		StringBuilder textConso = new StringBuilder();
+		textConso.append(conso);
+	
+		System.out.println("Vowels = " + textVow);
+		System.out.println("Consonant =" + textConso);
+		
+	}
+	
 	static void soal06() {
 		// input: saya adalah superman
 		// output: s*y*  a*a*a* s*p*r*a*
@@ -311,6 +360,7 @@ public class ChallengeDay6 {
 		String newStr = "";
 		
 		for(int i = 0; i < splitKalimat.length; i++) {
+			
 			for(int j =0; j < splitKalimat[i].length(); j++) {
 				if((j+1)%2 == 0) {
 //					newStr = kalimat.replaceFirst(String.valueOf(splitKalimat[i].charAt(j)), "*");
@@ -324,5 +374,29 @@ public class ChallengeDay6 {
 		
 		System.out.println(newStr);
 		
+	}
+
+	static void soal06Ver2() {
+		// input: saya adalah superman
+		// output: s*y*  a*a*a* s*p*r*a*
+				
+		System.out.println("Masukkan kalimat: ");
+		
+		String kalimat = input.nextLine();
+		String newStr = "";
+
+		for(int i = 0; i < kalimat.length(); i++) {
+			if((i+1)%2 == 0) {
+				if(kalimat.charAt(i) == ' ') {
+					newStr += " ";
+				}else{
+				newStr += "*";	
+				}
+			}else {
+				newStr += kalimat.charAt(i);
+			}
+		}
+		
+		System.out.println("Kalimat baru : " + newStr);
 	}
 }
