@@ -212,27 +212,32 @@ public class ChallengeDay6 {
 		System.out.print("Urutan harga menu: ");
 		String menu = input.nextLine();
 		
-		System.out.print("Uang Elsa: ");
-		double uangElsa = input.nextDouble();
-		
 		String[] hargaPerMenu = menu.split(" , ");
 		
-		double total = 0;
-		
-		String menuAlergi = hargaPerMenu[index];
-		
-		for(String harga : hargaPerMenu) {
-			total += Double.parseDouble(harga);
-		}
-		
-		double bisaDimakan = total - (Double.parseDouble(menuAlergi) );
-		
-		System.out.printf("Elsa harus membayar = %.3f %n", bisaDimakan/2);
-		if((uangElsa - (bisaDimakan/2)) == 0){
-			System.out.println("Uang Pas");
+		if(hargaPerMenu.length == totalMenu) {
+			System.out.print("Uang Elsa: ");
+			double uangElsa = input.nextDouble();
+			
+			double total = 0;
+			
+			String menuAlergi = hargaPerMenu[index];
+			
+			for(String harga : hargaPerMenu) {
+				total += Double.parseDouble(harga);
+			}
+			
+			double bisaDimakan = total - (Double.parseDouble(menuAlergi) );
+			
+			System.out.printf("Elsa harus membayar = %.3f %n", bisaDimakan/2);
+			if((uangElsa - (bisaDimakan/2)) == 0){
+				System.out.println("Uang Pas");
+				
+			}else {
+				System.out.printf("Sisa Uang Elsa : %.3f ",(uangElsa - (bisaDimakan/2)));
+			}
 			
 		}else {
-			System.out.printf("Sisa Uang Elsa : %.3f ",(uangElsa - (bisaDimakan/2)));
+			System.out.println("Total menu dan urutan harga menu tidak sama!");
 		}
 		
 	}
@@ -363,7 +368,6 @@ public class ChallengeDay6 {
 			
 			for(int j =0; j < splitKalimat[i].length(); j++) {
 				if((j+1)%2 == 0) {
-//					newStr = kalimat.replaceFirst(String.valueOf(splitKalimat[i].charAt(j)), "*");
 					newStr += "*";
 				}else {
 					newStr += splitKalimat[i].charAt(j);
@@ -384,17 +388,22 @@ public class ChallengeDay6 {
 		
 		String kalimat = input.nextLine();
 		String newStr = "";
+		
+		int counter = 1;
 
-		for(int i = 0; i < kalimat.length(); i++) {
-			if((i+1)%2 == 0) {
-				if(kalimat.charAt(i) == ' ') {
-					newStr += " ";
-				}else{
-				newStr += "*";	
-				}
-			}else {
-				newStr += kalimat.charAt(i);
+		for(int i = 0; i < kalimat.length(); i++) {	
+			if(kalimat.charAt(i) == ' ') {
+				newStr += " ";
+				counter = 1;
+				continue;
 			}
+			
+			if(counter%2 != 0) {
+				newStr += kalimat.charAt(i);	
+			}else {
+				newStr += "*";
+			}
+			counter++;
 		}
 		
 		System.out.println("Kalimat baru : " + newStr);
