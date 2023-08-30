@@ -53,7 +53,7 @@ public class ChallengeDay6 {
 //		
 //		input.close();
 		
-		soal06Ver2();
+//		soal06Ver2();
 	}
 	
 	static void soal01() {
